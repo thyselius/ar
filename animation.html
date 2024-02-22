@@ -5,6 +5,25 @@
 <script src="js/aframe-ar.js"></script>
 <body style="margin: 0px; overflow: hidden;">
 
+<script>
+  // Function to run when the object is clicked
+  function onObjectClicked() {
+    alert('You clicked the AR object!');
+  }
+
+  // Wait for the window to load
+  window.onload = function() {
+    // Get the AR object by its ID
+    const arObject = document.querySelector('a-sphere');
+
+    // Check if the AR object exists
+    if(arObject) {
+      // Add event listener for click events
+      arObject.addEventListener('click', onObjectClicked);
+    }
+  };
+</script>
+
 <a-scene embedded vr-mode-ui="enabled: false;" arjs="debugUIEnabled: true;">
 
     <a-assets>
